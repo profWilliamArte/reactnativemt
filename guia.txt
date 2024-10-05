@@ -1,0 +1,40 @@
+https://reactnativepaper.com/
+1) npx create-expo-app@latest .
+2) npm run reset-project
+3) Limpiar proyecto
+    -- eliminar 
+        la carpeta app-example
+        la carpeta hooks?
+        eliminar todo lo que esta dentro de la carpeta components
+4) Crear los botones basados en bootstrap
+    -- copiar todo lo que esta en constants/Colors.ts
+    -- colocar el CustomButton.tsx dentro de components
+
+5)  cambiar el index.tsx y _layout.jsx a .jsx
+    Ejemplo de como queda el index.jsx aplicando el tema dark puedes cambiara light
+
+
+    import { Text, View, StyleSheet  } from "react-native";
+    import { Colors } from "@/constants/Colors";
+    export default function Index() {
+    const currentColors = Colors.dark;
+    return (
+        <View style={[styles.container, { backgroundColor: currentColors.background }]}>
+        <Text style={styles.text}>Hola Mundo</Text>
+        </View>
+    );
+    }
+
+    const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    text: {
+        fontSize: 24,
+        textAlign: "center",
+        margin: 30,
+        color: Colors.dark.text
+    }
+    })
